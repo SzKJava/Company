@@ -14,7 +14,6 @@ public class FormController {
         
             this.dbCtrl = dbCtrl;
             initComponents();
-            setWorkerTable();
     }
     
     private void initComponents() {
@@ -32,6 +31,7 @@ public class FormController {
         mainFrm.getExitBtn().addActionListener( event -> exit() );
         mainFrm.getUpdateBtn().addActionListener( event -> update() );
         mainFrm.getSaveBtn().addActionListener( event -> save() );
+        mainFrm.getLoadBtn().addActionListener( event -> setWorkerTable() );
         mainFrm.setVisible( true);
     }
     
@@ -40,7 +40,7 @@ public class FormController {
         Vector<Vector<Object>> workerData = new Vector<>();
         workerData = dbCtrl.getWorkerData();
         
-        DefaultTableModel model = new DefaultTableModel( null, columnNames );
+        DefaultTableModel model = new DefaultTableModel( workerData, columnNames );
         mainFrm.getWorkerTbl().setModel( model );
     }
     

@@ -36,6 +36,7 @@ public class MainForm extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        loadBtn = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         saveBtn = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -103,16 +104,9 @@ public class MainForm extends javax.swing.JFrame {
 
         eastPnl.add(jPanel3);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 150, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
+        loadBtn.setText("Betöltés");
+        loadBtn.setPreferredSize(new java.awt.Dimension(110, 25));
+        jPanel4.add(loadBtn);
 
         eastPnl.add(jPanel4);
 
@@ -291,6 +285,7 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton loadBtn;
     private javax.swing.JPanel norhtPnl;
     private javax.swing.JButton saveBtn;
     private javax.swing.JPanel southPnl;
@@ -322,5 +317,9 @@ public class MainForm extends javax.swing.JFrame {
 
     public void setStatusLbl( String text ) {
         statusLbl.setText( text );
+    }
+    
+    public JButton getLoadBtn() {
+        return loadBtn;
     }
 }
