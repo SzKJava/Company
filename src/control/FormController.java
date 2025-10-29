@@ -56,4 +56,9 @@ public class FormController {
         
         System.exit( 0 );
     }
+    
+    protected void setStatusLbl( String text ) {
+        
+        mainFrm.setStatusLbl( text );
+    }
 }

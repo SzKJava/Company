@@ -24,11 +24,14 @@ public class MainController {
         dbCtrl = new DatabaseController();
         boolean success = dbCtrl.connect();
         if( success ) {
-            System.out.println( "Kapcsolat OK");
+           
+            System.out.println( "Ok" );
+            //frmCtrl.setStatusLbl( "Kapcsolat rendben." );
             
         }else {
             
-            System.err.println( "Nincs kapcsolat" );
+            System.out.println( "Nincs kapcsolat!" );
+            //frmCtrl.setStatusLbl( "Nincs kapcsolat!" );
         }
     }
 }

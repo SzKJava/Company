@@ -33,4 +33,21 @@ public class DatabaseController {
         
         return items;
     }
+    
+    protected boolean newWorkerData( Vector<Object> workerData ) {
+        
+        if( conn != null ) {
+            
+            SqlRunner sqlRun = new SqlRunner( "__SAVEWORKER__" );
+            boolean success = sqlRun.setWorkerData( conn, workerData );
+            
+            return true;
+            
+        }else {
+            
+            return false;
+        }
+        
+            
+    }
 }

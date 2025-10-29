@@ -5,9 +5,10 @@
         <group>
             <file>file:/home/tanar/25_26/sz_K/Company/src/control/FormController.java</file>
             <file>file:/home/tanar/25_26/sz_K/Company/src/control/MainController.java</file>
+            <file>file:/home/tanar/25_26/sz_K/Company/src/view/MainForm.java</file>
+            <file>file:/home/tanar/25_26/sz_K/Company/src/control/DataFormController.java</file>
+            <file>file:/home/tanar/25_26/sz_K/Company/src/view/workerForm.java</file>
             <file>file:/home/tanar/25_26/sz_K/Company/src/model/SqlRunner.java</file>
-            <file>file:/home/tanar/25_26/sz_K/Company/src/model/Connect.java</file>
-            <file>file:/home/tanar/25_26/sz_K/Company/sql/__GETWORKERS__.sql</file>
             <file>file:/home/tanar/25_26/sz_K/Company/src/control/DatabaseController.java</file>
         </group>
     </open-files>

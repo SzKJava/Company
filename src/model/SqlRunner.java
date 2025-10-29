@@ -70,4 +70,30 @@ public class SqlRunner {
         
         return items;
     }
+    
+    public boolean setWorkerData( Connection conn, Vector<Object> workerData ) {
+        
+        String[] sql = getSqlQuery();
+        PreparedStatement pstmt = null;
+        
+        try {
+            
+            pstmt = conn.prepareStatement(  sql[ 0 ]);
+            pstmt.setString( 1, String.valueOf( workerData.get( 0 )));
+            pstmt.setInt( 2, Integer.parseInt( String.valueOf( workerData.get( 1 ))));
+            pstmt.setString( 3, String.valueOf( workerData.get( 2 )));
+            pstmt.setString( 4, String.valueOf( workerData.get( 3 )));
+            pstmt.setString( 5, String.valueOf( workerData.get( 4 )));
+            pstmt.setString( 6, String.valueOf( workerData.get( 5 )));
+            pstmt.setString( 7, String.valueOf( workerData.get( 6 )));
+            
+            pstmt.execute();
+            
+            return true;
+            
+        } catch ( SQLException ex ) {
+            
+            return false;
+        }
+    }
 }
