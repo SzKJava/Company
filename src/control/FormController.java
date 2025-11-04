@@ -47,6 +47,15 @@ public class FormController {
     
     private void update() {
         
+        Vector<Object> workers = new Vector<>();
+        
+        for( int i = 0; i < mainFrm.getWorkerTbl().getColumnCount(); i++ ) {
+            
+            workers.add( mainFrm.getWorkerTbl().getValueAt( mainFrm.getWorkerTbl().getSelectedRow(), i ));
+        }
+        
+        DataFormController dformCrl = new DataFormController( dbCtrl,  2,  mainFrm );
+        dformCrl.setTextFields( workers );
     }
     
     private void save() {

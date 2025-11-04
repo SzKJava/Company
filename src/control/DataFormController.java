@@ -37,6 +37,8 @@ public class DataFormController {
             case 1:
                 workerFrm.getSaveBtn().setText( "Mentés" );
                 workerFrm.setTitle( "Új dolgozó felvétele" );
+                workerFrm.setLocationRelativeTo( workerFrm );
+                workerFrm.setVisible( true );
                 break;
                 
             case 2:
@@ -48,7 +50,6 @@ public class DataFormController {
         workerFrm.setModal( true );
         workerFrm.setLocationRelativeTo( workerFrm );
         addEventHolder();
-        workerFrm.setVisible( true );
     }
     
     private void saveWorker() {
@@ -82,8 +83,46 @@ public class DataFormController {
         
     }
     
-    private void updateWorker() {
+    public void setTextFields( Vector<Object> workers ) {
         
+        workerFrm.setNameTf( String.valueOf( workers.get( 0 )));
+        workerFrm.setsalaryTf(String.valueOf( workers.get( 1 )));
+        workerFrm.setBornTf(String.valueOf( workers.get( 2 )));
+        workerFrm.setHireTf(String.valueOf( workers.get( 3 )));
+        workerFrm.setAddressTf(String.valueOf( workers.get( 4 )));
+        workerFrm.setCityTf(String.valueOf( workers.get( 5 )));
+        workerFrm.setRoleTf(String.valueOf( workers.get( 6 )));
+        workerFrm.setVisible( true );
+    }
+    
+    private void updateWorker( ) {
+        
+        Vector<Object> workers = new Vector<>();
+        Object name = workerFrm.getNameTf().getText();
+        workers.add( name );
+        Object salary = workerFrm.getSalaryTf().getText();
+        workers.add( salary );
+        Object birth_date = workerFrm.getBornTf().getText();
+        workers.add( birth_date );
+        Object hire_date = workerFrm.getHireTf().getText();
+        workers.add( hire_date );
+        Object address = workerFrm.getAddressTf().getText();
+        workers.add( address );
+        Object city = workerFrm.getCityTf().getText();
+        workers.add( city );
+        Object role = workerFrm.getRoleTf().getText();
+        workers.add( role );
+        
+        boolean success = dbCtrl.updateWorkerData( workers );
+        if( success ) {
+            
+            workerFrm.setStatusLbl( "Sikeres írás" );
+            cancel();
+            
+        }else {
+            
+            workerFrm.setStatusLbl( "Hiba a  kiírás" );
+        }
     }
     
     private void cancel() {

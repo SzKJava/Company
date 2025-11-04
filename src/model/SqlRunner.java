@@ -86,6 +86,7 @@ public class SqlRunner {
             pstmt.setString( 5, String.valueOf( workerData.get( 4 )));
             pstmt.setString( 6, String.valueOf( workerData.get( 5 )));
             pstmt.setString( 7, String.valueOf( workerData.get( 6 )));
+            pstmt.setString( 8, String.valueOf( workerData.get( 0 )));
             
             pstmt.execute();
             
