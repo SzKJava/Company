@@ -112,7 +112,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 20, 5));
 
-        saveBtn.setText("Mentés");
+        saveBtn.setText("Új dolgozó");
         saveBtn.setPreferredSize(new java.awt.Dimension(110, 25));
         jPanel5.add(saveBtn);
 
@@ -184,7 +184,6 @@ public class MainForm extends javax.swing.JFrame {
         southPnl.setPreferredSize(new java.awt.Dimension(400, 40));
         southPnl.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 20, 0));
 
-        statusLbl.setText("jLabel1");
         statusLbl.setPreferredSize(new java.awt.Dimension(400, 15));
         southPnl.add(statusLbl);
 
@@ -213,13 +212,10 @@ public class MainForm extends javax.swing.JFrame {
 
         workerTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(workerTbl);

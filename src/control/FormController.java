@@ -32,6 +32,7 @@ public class FormController {
         mainFrm.getUpdateBtn().addActionListener( event -> update() );
         mainFrm.getSaveBtn().addActionListener( event -> save() );
         mainFrm.getLoadBtn().addActionListener( event -> setWorkerTable() );
+        mainFrm.setDefaultCloseOperation( javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE );
         mainFrm.setVisible( true);
     }
     
@@ -50,6 +51,7 @@ public class FormController {
     
     private void save() {
         
+        DataFormController dataFrm = new DataFormController( dbCtrl,  1,  mainFrm );
     }
     
     private void exit() {

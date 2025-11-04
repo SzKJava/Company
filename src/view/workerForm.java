@@ -69,7 +69,7 @@ public class workerForm extends javax.swing.JDialog {
         jLabel7 = new javax.swing.JLabel();
         roleTf = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        statusLbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(1, 1));
@@ -133,7 +133,7 @@ public class workerForm extends javax.swing.JDialog {
 
         eastPnl.add(jPanel12);
 
-        saveBtn.setText("jButton1");
+        saveBtn.setText("Mentés");
         saveBtn.setPreferredSize(new java.awt.Dimension(125, 27));
         jPanel13.add(saveBtn);
 
@@ -283,8 +283,7 @@ public class workerForm extends javax.swing.JDialog {
 
         centerPnl.add(jPanel8);
 
-        jLabel8.setText("jLabel8");
-        jPanel9.add(jLabel8);
+        jPanel9.add(statusLbl);
 
         centerPnl.add(jPanel9);
 
@@ -353,7 +352,6 @@ public class workerForm extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -377,6 +375,7 @@ public class workerForm extends javax.swing.JDialog {
     private javax.swing.JTextField salaryTf;
     private javax.swing.JButton saveBtn;
     private javax.swing.JPanel southPnl;
+    private javax.swing.JLabel statusLbl;
     private javax.swing.JPanel westPnl;
     // End of variables declaration//GEN-END:variables
 
@@ -446,5 +445,10 @@ public class workerForm extends javax.swing.JDialog {
     
     public void setRoleTf( String text ) {
         roleTf.setText( text );
+    }
+    
+    public void setStatusLbl( String text ) {
+        
+        statusLbl.setText( text );
     }
 }
