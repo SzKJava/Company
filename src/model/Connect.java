@@ -20,6 +20,20 @@ public class Connect {
         url = "jdbc:mariadb://localhost:3306/";
     }
     
+    public Connection baseConnect() {
+        
+        try {
+            
+            conn = DriverManager.getConnection( "jdbc:mariadb://localhost:3306", user, pass );
+            
+        } catch ( SQLException ex ) {
+            
+            System.err.println( "Nem sikerült kapcsolódni" );
+        }
+        
+        return conn;
+    }
+    
     public void connecting() {
         
         //jdbc:mariadb://localhost:3306/tanar_company?username=user&password=pass;

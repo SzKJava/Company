@@ -38,6 +38,29 @@ public class SqlRunner {
         return sql;
     }
     
+    public boolean createDatabase( Connection conn ) {
+        
+        String[] sql = getSqlQuery();
+        Statement stmt = null;
+        
+        try {
+            
+            stmt = conn.createStatement();
+            for( String command : sql ) {
+                
+                stmt.addBatch( command );
+            }
+            
+            stmt.executeBatch();
+            
+            return true;
+            
+        } catch ( SQLException ex ) {
+            
+            return false;
+        }
+    }
+    
     public Vector<Vector<Object>> getWorkersData( Connection conn ) {
         
         String[] sql = getSqlQuery();

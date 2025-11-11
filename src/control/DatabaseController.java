@@ -12,6 +12,40 @@ public class DatabaseController {
     public DatabaseController() {
     }
     
+    public boolean checkDatabase() {
+        
+        Connect connect = new Connect( "tanar_company", "tanar", "123" );
+        connect.connecting();
+        conn = connect.getConn();
+        
+        if( conn != null ){
+            
+            return true;
+            
+        }else {
+            
+            return false;
+        }
+     }
+    
+    protected boolean createDatabase() {
+        
+        Connect connect = new Connect( "tanar_company", "tanar", "123" );
+        conn = connect.baseConnect();
+        
+        SqlRunner sqlRun = new SqlRunner( "__CREATEDATABASE__" );
+        boolean success = sqlRun.createDatabase( conn );
+        if( success ) {
+            
+            return true;
+            
+        }else {
+            
+            return false;
+        }
+        
+    }
+    
     protected boolean connect() {
         
         Connect connect = new Connect( "tanar_company", "tanar", "123" );

@@ -22,7 +22,7 @@ public class MainController {
     private void checkDatabase() {
         
         dbCtrl = new DatabaseController();
-        boolean success = dbCtrl.connect();
+        boolean success = dbCtrl.checkDatabase();
         if( success ) {
            
             System.out.println( "Ok" );
@@ -30,7 +30,17 @@ public class MainController {
             
         }else {
             
-            System.out.println( "Nincs kapcsolat!" );
+            boolean dbSuccess = dbCtrl.createDatabase();
+            if( dbSuccess ) {
+                
+                //frmCtrl = new FormController( dbCtrl );
+                //frmCtrl.setStatusLbl( "Adatbázis létrehozva" );
+            
+            }else {
+                
+                frmCtrl.setStatusLbl( "Adatbázist nem sikerült létrehozni" );
+            }
+            //System.out.println( "Nincs kapcsolat!" );
             //frmCtrl.setStatusLbl( "Nincs kapcsolat!" );
         }
     }
